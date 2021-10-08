@@ -23,7 +23,8 @@ int main(void) {
 	unsigned char count = 0;
 	unsigned char tempA = PINA;
 	unsigned char tempB = PINB;
-	for(unsigned char i = 0; i < 8;i++){
+	unsigned char i;
+	for(i = 0; i < 8;i++){
 		if((tempA & 0x01) == 0x01){
 			count++;
 		}
