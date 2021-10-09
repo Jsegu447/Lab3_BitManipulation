@@ -19,7 +19,8 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
-	unsigned char tempA = PINA;
+	unsigned char tempA = PINA & 0x0F ;
+	unsigned char 
 	switch(tempA){
 	case 0x01:
 	case 0x02:
