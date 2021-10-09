@@ -25,6 +25,7 @@ int main(void) {
 	if(checkA == 0x30){
 		checkARes = 0x80;
 	}
+	else{checkARes = 0;}
 	switch(tempA){
 	case 0x01:
 	case 0x02:
