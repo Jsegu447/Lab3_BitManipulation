@@ -14,7 +14,7 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'A and B == 0x02;',
+tests = [ {'description': 'A = 0x',
     'steps': [ {'inputs': [('PINA',0x02),('PINB', 0x02)], 'iterations': 1 } ],
     'expected': [('PORTC',0x04)],
     },
