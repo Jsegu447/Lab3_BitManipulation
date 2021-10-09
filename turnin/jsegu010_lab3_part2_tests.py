@@ -14,21 +14,21 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'A and B == 0x02;',
-    'steps': [ {'inputs': [('PINA',0x02),('PINB', 0x02)], 'iterations': 1 } ],
-    'expected': [('PORTC',0x04)],
+tests = [ {'description': 'Fuel lvl 1;',
+    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTC',0x60)],
     },
-    {'description': 'A and B == 0xFF.',
-    'steps': [ {'inputs': [('PINA', 0xFF),('PINB', 0xFF)],'iterations': 1}  ],
-    'expected': [('PORTC',0xF0)],
+    {'description': 'Fuel lvl 15.',
+    'steps': [ {'inputs': [('PINA', 0x0F)],'iterations': 1}  ],
+    'expected': [('PORTC',0x3F)],
     },
-{'description': 'A and B == 0x01.',
-    'steps': [ {'inputs': [('PINA', 0x01),('PINB', 0x01)],'iterations': 1}  ],
-    'expected': [('PORTC',0x02)],
+{'description': 'Fuel lvl 7.',
+    'steps': [ {'inputs': [('PINA', 0x07)],'iterations': 1}  ],
+    'expected': [('PORTC',0x3C)],
     },
-{'description': ' A and B ==  0',
-    'steps': [ {'inputs': [('PINA', 0x00),('PINB', 0x00)],'iterations': 1}  ],
-    'expected': [('PORTC',0x00)],
+{'description': 'Fuel lvl 0.',
+    'steps': [ {'inputs': [('PINA', 0x00)],'iterations': 1}  ],
+    'expected': [('PORTC',0x40)],
     },
     ]
 
