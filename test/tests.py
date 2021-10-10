@@ -13,10 +13,11 @@
 #   expected - The expected output (as a list of tuples) at the end of this test
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
-# altered in between executions (unless preconditions are used).
-tests = [ {'description': 'A = 0xFF',
-    'steps': [ {'inputs': [('PINA',0xFF)], 'iterations': 1 } ],
-    'expected': [('PORTB',0x0F),('PORTC',0xF0)],
+
+ #altered in between executions (unless preconditions are used).
+3tests = [ {'description': 'D = 0x40, B = 0x00',
+    'steps': [ {'inputs': [('PIND',0x0F),('PINB',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTB',0x01)],
     },
 {'description': 'A = 0xAB',
     'steps': [ {'inputs': [('PINA',0xAB)], 'iterations': 1 } ],
