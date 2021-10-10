@@ -14,22 +14,23 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'A = 0xFF',
-    'steps': [ {'inputs': [('PINA',0xFF)], 'iterations': 1 } ],
-    'expected': [('PORTB',0x0F),('PORTC',0xF0)],
+tests = [ {'description': 'D = 0x0F, B = 0x01',
+    'steps': [ {'inputs': [('PIND',0x0F),('PINB',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTB',0x02)],
     },
-{'description': 'A = 0xAB',
-    'steps': [ {'inputs': [('PINA',0xAB)], 'iterations': 1 } ],
-    'expected': [('PORTB',0x0A),('PORTC',0xB0)],
+{'description': 'D = 0x08, B = 0x01',
+    'steps': [ {'inputs': [('PIND',0x08),('PINB',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTB',0x04)],
     },
-{'description': 'A = 0x00',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
-    'expected': [('PORTB',0x00),('PORTC',0x00)],
+{'description': 'D = 0x00, B = 0x00',
+    'steps': [ {'inputs': [('PIND',0x00),('PINB',0x00)], 'iterations': 1 } ],
+    'expected': [('PORTB',0x00)],
     },
-{'description': 'A = 0x10',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
-    'expected': [('PORTC',0x01)('PORTC',0x00)],
+{'description': 'D = 0x00, B = 0x01',
+    'steps': [ {'inputs': [('PIND',0x00),('PINB',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTB',0x02)],
     },
+
     ]
 
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
