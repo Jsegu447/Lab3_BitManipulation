@@ -14,16 +14,23 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRA = 0x00; PORTA = 0x00;
-	DDRB = 0x00; PORTB = 0x00;
-	DDRC = 0xFF; PORTC = 0x00;
+	DDRD = 0x00; PORTD = 0x00;
+	DDRB = 0xFE; PORTB = 0x00;
 
     /* Insert your solution below */
     while (1) {
-	unsigned char upNib = PINA >> 4;
-	unsigned char lowNib = PINA << 4;
-	PORTB = upNib;
-	PORTC = lowNib;
+	unsigned long totalNum = PIND;
+	totalNum = totalNum << 1;
+	totalNum += (PINB & 0x01);
+	if(totalNum >= 70){
+	PORTB = 0x02;
+	}	
+	else if(totalNum <= 70 && totalNum >=5){
+	PORTB = 0x04;
+	}	
+	else{
+	continue;
+	}
     }
     return 1;
 }
